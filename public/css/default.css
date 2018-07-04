@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    text-align: center;
+}
+
+table.tasks {
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid #cccccc;
+}
+
+caption {
+    padding: 10px 10pt 5px;
+    text-align: right;
+    color: #aaaaaa;
+    font: 400 11pt Arial, sans-serif;
+    white-space: nowrap;
+}
+
+.tasks td {
+    padding: 10px 10pt;
+    color: #666666;
+    font: 400 11pt Arial, sans-serif;
+}
+
+td.tdata {
+    text-align: left;
+}
+
+tr:nth-child(odd) {
+    background-color: #e0e8f0;
+}
+
+div.ctrls {
+    margin-top: 20px;
+    font: 600 10pt Arial, sans-serif;
+}
+
+.clink {
+    font-weight: 400;
+    color: #005cbf;
+}
+
+.treatment {
+    margin-top: 20px;
+    font: 400 10pt Arial, sans-serif;
+    color: #999999;
+}
