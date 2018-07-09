@@ -1,30 +1,26 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('queue')
 
-        <title>Электронная очередь</title>
+@section('queuetable')
+    <table class="tasks">
+        <caption>Очередь</caption>
+        @foreach($queue as $qitem)
+            <tr>
+                <td>{{ $qitem->id }}</td>
+                <td>{{ $qitem->created_at }}</td>
+            </tr>
+        @endforeach
+    </table>
+@endsection
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+@section('emptyqueue')
+    <table class="tasks">
+        <caption>Очередь пуста</caption>
+    </table>
+@endsection
 
-        <!-- Styles -->
-        <link href="/css/default.css" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <table class="tasks">
-            <caption>Очередь</caption>
-            @foreach($queue as $qitem)
-                <tr>
-                    <td>{{ $qitem->id }}</td>
-                    <td>{{ $qitem->created_at }}</td>
-                </tr>
-            @endforeach
-        </table>
-        <div class="ctrls">
-            [ <a href="/" class="clink">Назад</a> ]
-        </div>
-    </body>
-</html>
+@section('controls')
+    <div class="ctrls">
+        [ <a href="/" class="clink">Назад</a> ]
+    </div>
+
+@endsection

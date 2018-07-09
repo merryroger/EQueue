@@ -16,6 +16,11 @@ class Log extends Model
         return $query->where('status', 0);
     }
 
+    public function scopeTreatedStatus($query)
+    {
+        return $query->where('status', 1);
+    }
+
     public function setStatusAttribute($value)
     {
         $this->attributes['status'] = $value;

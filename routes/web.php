@@ -15,7 +15,7 @@ Route::get('/', 'TaskController@showTable');
 
 Route::get('treat/{taskid}', 'TaskController@treatTask');
 
-Route::get('queue', 'LogController@showQueue');
+Route::get('queue', 'TaskController@showQueue');
 
-Route::get('accept', 'LogController@acceptTask');
+Route::get('accept', 'TaskController@acceptTask');
 
