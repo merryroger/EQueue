@@ -18,7 +18,8 @@ class TaskController extends Controller
 
     public function treatTask($taskId)
     {
-        if (Task::isValidId($taskId) && $task = Task::find($taskId)) {
+        $task = Task::find($taskId);
+        if ($task) {
             $task->counter++;
             $task->save();
 
@@ -40,8 +41,7 @@ class TaskController extends Controller
         $rid = 0;
 
         if ($rec = Log::zeroStatus()->orderBy('created_at')->first()) {
-            $rec->status = 1;
-            $rec->save();
+            Log::whereId($rec->id)->update(['status' => 1]);
             $rid = $rec->id;
         }
 

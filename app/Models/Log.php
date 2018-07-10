@@ -21,9 +21,4 @@ class Log extends Model
         return $query->where('status', 1);
     }
 
-    public function setStatusAttribute($value)
-    {
-        $this->attributes['status'] = $value;
-    }
-
 }
