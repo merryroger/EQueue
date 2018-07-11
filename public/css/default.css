@@ -51,3 +51,8 @@ div.ctrls {
     font: 400 10pt Arial, sans-serif;
     color: #999999;
 }
+
+.error {
+    color: #6c757d;
+    font: 400 15pt Arial, sans-serif;
+}

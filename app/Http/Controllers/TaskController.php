@@ -18,7 +18,7 @@ class TaskController extends Controller
 
     public function treatTask($taskId)
     {
-        $task = Task::find($taskId);
+        $task = Task::findOrFail($taskId);
         if ($task) {
             $task->counter++;
             $task->save();
@@ -31,7 +31,7 @@ class TaskController extends Controller
 
     public function showQueue()
     {
-        $queue = Log::zeroStatus()->orderBy('created_at', 'desc')->get()->all();
+        $queue = Log::zeroStatus()->orderBy('created_at', 'desc')->get();
 
         return view('show_queue', compact('queue'));
     }
@@ -39,8 +39,9 @@ class TaskController extends Controller
     public function acceptTask()
     {
         $rid = 0;
+        $rec = Log::zeroStatus()->orderBy('created_at')->first();
 
-        if ($rec = Log::zeroStatus()->orderBy('created_at')->first()) {
+        if ($rec) {
             Log::whereId($rec->id)->update(['status' => 1]);
             $rid = $rec->id;
         }
