@@ -19,12 +19,10 @@ class TaskController extends Controller
     public function treatTask($taskId)
     {
         $task = Task::findOrFail($taskId);
-        if ($task) {
-            $task->counter++;
-            $task->save();
+        $task->counter++;
+        $task->save();
 
-            Log::create(['task_id' => $taskId, 'status' => 0]);
-        }
+        Log::create(['task_id' => $taskId, 'status' => 0]);
 
         return redirect('/');
     }

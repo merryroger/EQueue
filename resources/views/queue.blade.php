@@ -10,12 +10,14 @@
     <link href="/css/default.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-@if($queue)
-    @yield('queuetable')
-@else
-    @yield('emptyqueue')
-@endif
+    <div class="mcont">
+        @if($queue)
+            @yield('queuetable')
+        @else
+            @yield('emptyqueue')
+        @endif
 
-    @yield('controls')
+        @yield('controls')
+    </div>>
 </body>
 </html>

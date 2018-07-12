@@ -10,10 +10,12 @@
     <link href="/css/default.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    @yield('tasktable')
+    <div class="mcont">
+        @yield('tasktable')
 
-    @yield('threads')
+        @yield('threads')
 
-    @yield('controls')
+        @yield('controls')
+    </div>
 </body>
 </html>

@@ -11,6 +11,7 @@
             </tr>
         @endforeach
     </table>
+@endsection
 
 @section('threads')
     @if(isset($rid) && $rid)
@@ -19,6 +20,7 @@
         <div class="treatment">Нет заданий для обработки</div>
     @elseif(!isset($rid))
     @endif
+@endsection
 
 @section('controls')
     <div class="ctrls">

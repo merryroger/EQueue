@@ -10,6 +10,12 @@
     <link href="/css/default.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="error">Ошибка 404. Страница не найдена.</div>
+
+<div class="mcont error">
+    <h1>Ошибка 404. Страница не найдена.</h1>
+    <div class="ctrls">
+        <a href="/" class="clink">Вернуться</a> на корневую страницу.
+    </div>
+</div>
 </body>
 </html>
